@@ -18,12 +18,14 @@ class BooksController extends Controller
     }
     
     public function book($book){
-
+        //get a book using id
         $bookDetails =
         Books::find($book);
 
-        //get a book using id
-        return $bookDetails; 
+       
+        return view('book', [
+            'book' => $bookDetails,
+        ]);
 
     }
     public function create(){

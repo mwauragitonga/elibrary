@@ -26,14 +26,15 @@ Route::get('/authors', [\App\Http\Controllers\AuthorsController::class, 'index']
 //get an author using id
 Route::get('/author/{id}', [\App\Http\Controllers\AuthorsController::class, 'author']);
 
-
 //Create Author routes
 Route::get('/create/author/', [\App\Http\Controllers\AuthorsController::class, 'create']);
 Route::post('/create/author/', [\App\Http\Controllers\AuthorsController::class, 'save']);
 
 //Create Book Routes
-Route::get('/create/author/', [\App\Http\Controllers\BooksController::class, 'create']);
-Route::post('/create/author/', [\App\Http\Controllers\BooksController::class, 'save']);
+Route::get('/create/book/', [\App\Http\Controllers\BooksController::class, 'create']);
+Route::post('/create/book/', [\App\Http\Controllers\BooksController::class, 'save']);
 
-
+//Edit Book Routes
+Route::get('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'edit']); 
+Route::put('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'update']); 
 

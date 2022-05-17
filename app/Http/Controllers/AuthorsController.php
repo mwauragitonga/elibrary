@@ -16,13 +16,12 @@ class AuthorsController extends Controller
         return $Authors; //returns the fetched post
     }
 
-    public function book($book)
+    public function author($author)
     {
 
-        $bookDetails =
-        Authors::find($book);
-
-        //get a book using id
-        return $bookDetails;
+        //Fetch Author details using id
+        $authorDetails =
+        Authors::find($author);
+        return $authorDetails;
     }
 }

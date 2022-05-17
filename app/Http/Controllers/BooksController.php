@@ -10,8 +10,11 @@ class BooksController extends Controller
     //
     public function index(){
         //get all books
-        $books = Books::all(); 
-        return $books; //returns the fetched post
+        $books = Books::all();
+        return view('books', [
+            'books' => $books,
+        ]);
+
     }
     
     public function book($book){
@@ -25,6 +28,7 @@ class BooksController extends Controller
     }
     public function create(){
         //create new book form
+
     }
     public function edit(Books $book){
             //edit book form

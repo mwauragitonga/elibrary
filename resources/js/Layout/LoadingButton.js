@@ -3,7 +3,7 @@ import cx from "classnames";
 
 export default ({ loading, className, children, ...props }) => {
     const classNames = cx(
-        "flex items-center",
+        "flex items-center btn btn-primary",
         "focus:outline-none",
         {
             "pointer-events-none bg-opacity-75 select-none": loading,

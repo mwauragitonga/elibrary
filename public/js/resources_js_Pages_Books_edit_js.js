@@ -66,7 +66,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
       children = _ref.children,
       props = _objectWithoutProperties(_ref, _excluded);
 
-  var classNames = classnames__WEBPACK_IMPORTED_MODULE_1___default()("flex items-center", "focus:outline-none", {
+  var classNames = classnames__WEBPACK_IMPORTED_MODULE_1___default()("flex items-center btn btn-primary", "focus:outline-none", {
     "pointer-events-none bg-opacity-75 select-none": loading
   }, className);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", _objectSpread(_objectSpread({
@@ -127,7 +127,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
       id: name,
       name: name
     }, props), {}, {
-      className: "form-input ".concat(errors.length ? "error" : "")
+      className: "form-input form-control ".concat(errors.length ? "error" : "")
     })), errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "form-error",
       children: errors
@@ -154,24 +154,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function Layout(_ref) {
   var children = _ref.children;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("header", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        href: "/",
-        children: "Home"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        href: "/about",
-        children: "About"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        href: "/contact",
-        children: "Contact"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("article", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("article", {
       children: children
-    })]
+    })
   });
 }
 
@@ -222,7 +210,7 @@ var Edit = function Edit() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    put(route("book.update", contact.id));
+    put(route("book.update", book.id));
   }
 
   function destroy() {
@@ -236,51 +224,68 @@ var Edit = function Edit() {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h1", {
-      className: "mb-8 text-3xl font-bold",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink // href={route("contacts")}
-      , {
-        className: "text-indigo-600 hover:text-indigo-700",
-        children: "Contacts"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-        className: "mx-2 font-medium text-indigo-600",
-        children: "/"
-      }), data.name]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "max-w-3xl overflow-hidden bg-white rounded shadow",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
-        onSubmit: handleSubmit,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "flex flex-wrap p-8 -mb-8 -mr-6",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
-            label: "First Name",
-            name: "first_name",
-            errors: errors.name,
-            value: data.name,
-            onChange: function onChange(e) {
-              return setData("name", e.target.value);
-            }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            className: "w-full pb-8 pr-6 lg:w-1/2",
-            label: "Last Name",
-            name: "last_name",
-            errors: errors.isbn,
-            value: data.isbn,
-            onChange: function onChange(e) {
-              return setData("isbn", e.target.value);
-            }
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "flex items-center px-8 py-4 bg-gray-100 border-t border-gray-200",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_LoadingButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "mt-20",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      "class": "card shadow mb-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        "class": "card-header",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+          "class": "card-title",
+          children: "Viewing Book Details"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        "class": "card-body",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+          onSubmit: handleSubmit,
+          children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            "class": "form-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              "class": "form-group col-md-4",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                className: "form-group",
+                label: "Book Title",
+                name: "name",
+                errors: errors.name,
+                value: data.name,
+                onChange: function onChange(e) {
+                  return setData("name", e.target.value);
+                }
+              }), " "]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              "class": "form-group col-md-4",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                className: "form-group",
+                label: "ISBN",
+                name: "isbn",
+                errors: errors.isbn,
+                value: data.isbn,
+                onChange: function onChange(e) {
+                  return setData("isbn", e.target.value);
+                }
+              }), " "]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              "class": "form-group col-md-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                className: "form-group",
+                label: "ISBN",
+                name: "isbn",
+                errors: errors.isbn,
+                value: data.isbn,
+                onChange: function onChange(e) {
+                  return setData("isbn", e.target.value);
+                }
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_LoadingButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
             loading: processing,
             type: "submit",
             className: "ml-auto btn-indigo",
-            children: "Update Contact"
-          })
-        })]
-      })
+            children: "Update Book"
+          })]
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "max-w-3xl overflow-hidden bg-white rounded shadow"
     })]
   });
 };

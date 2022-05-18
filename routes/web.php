@@ -38,9 +38,10 @@ Route::post('/create/book/', [\App\Http\Controllers\BooksController::class, 'sav
 //Edit Book Routes
 // routes/web.php
 
-Route::get('/edit/book/{book}/', [BooksController::class, 'edit'])->name('books.edit');
+Route::get('/edit/book/{book}/', [BooksController::class, 'edit'])->name('book.edit');
+Route::put('/edit/book/{book}/', [BooksController::class, 'update'])->name('book.update');
 // Route::get('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'edit'])->name('books.edit'); 
-Route::put('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'update']); 
+// Route::put('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'update']); 
 
 
 // Auth::routes();

@@ -13,12 +13,10 @@ class CreateAuthorBooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('author_books', function (Blueprint $table) {
+        Schema::create('authors_books', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->text('description');
-            $table->foreignId('author_id')->constrained();
-            $table->foreignId('book_id')->constrained();
+            $table->foreignId('authors_id')->constrained();
+            $table->foreignId('books_id')->constrained();
             $table->timestamps();
         });
     }

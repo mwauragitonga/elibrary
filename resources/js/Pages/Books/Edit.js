@@ -16,7 +16,7 @@ const Edit = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        put(route("book.update", contact.id));
+        put(route("book.update", book.id));
     }
 
     function destroy() {
@@ -32,51 +32,86 @@ const Edit = () => {
     }
 
     return (
-        <div>
-            {/* <Helmet title={`${data.first_name} ${data.last_name}`} /> */}
-            <h1 className="mb-8 text-3xl font-bold">
-                <InertiaLink
-                    // href={route("contacts")}
-                    className="text-indigo-600 hover:text-indigo-700"
-                >
-                    Contacts
-                </InertiaLink>
-                <span className="mx-2 font-medium text-indigo-600">/</span>
-                {data.name}
-            </h1>
-            {/* {contact.deleted_at && (
-                // <TrashedMessage onRestore={restore}>
-                //     This contact has been deleted.
-                // </TrashedMessage>
-            )} */}
+        <div className="mt-20">
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <strong class="card-title">Viewing Book Details</strong>
+                </div>
+                <div class="card-body">
+                    <form onSubmit={handleSubmit}>
+                        {" "}
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <TextInput
+                                    className="form-group"
+                                    label="Book Title"
+                                    name="name"
+                                    errors={errors.name}
+                                    value={data.name}
+                                    onChange={(e) =>
+                                        setData("name", e.target.value)
+                                    }
+                                />{" "}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <TextInput
+                                    className="form-group"
+                                    label="ISBN"
+                                    name="isbn"
+                                    errors={errors.isbn}
+                                    value={data.isbn}
+                                    onChange={(e) =>
+                                        setData("isbn", e.target.value)
+                                    }
+                                />{" "}
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <TextInput
+                                    className="form-group"
+                                    label="ISBN"
+                                    name="isbn"
+                                    errors={errors.isbn}
+                                    value={data.isbn}
+                                    onChange={(e) =>
+                                        setData("isbn", e.target.value)
+                                    }
+                                />
+                            </div>
+                        </div>
+                        <LoadingButton
+                            loading={processing}
+                            type="submit"
+                            className="ml-auto btn-indigo"
+                        >
+                                Update Book
+                        </LoadingButton>
+                    </form>
+                </div>
+            </div>
+
             <div className="max-w-3xl overflow-hidden bg-white rounded shadow">
-                <form onSubmit={handleSubmit}>
+                {/* <form onSubmit={handleSubmit}>
                     <div className="flex flex-wrap p-8 -mb-8 -mr-6">
                         <TextInput
                             className="w-full pb-8 pr-6 lg:w-1/2"
-                            label="First Name"
-                            name="first_name"
+                            label="Title"
+                            name="name"
                             errors={errors.name}
                             value={data.name}
                             onChange={(e) => setData("name", e.target.value)}
                         />
                         <TextInput
                             className="w-full pb-8 pr-6 lg:w-1/2"
-                            label="Last Name"
-                            name="last_name"
+                            label="ISBN"
+                            name="isbn"
                             errors={errors.isbn}
                             value={data.isbn}
                             onChange={(e) => setData("isbn", e.target.value)}
                         />
-                       
-
                     </div>
                     <div className="flex items-center px-8 py-4 bg-gray-100 border-t border-gray-200">
-                        {/* {!contact.deleted_at && (
-                            <DeleteButton onDelete={destroy}>
-                                Delete Contact
-                            </DeleteButton>
-                        )} */}
+ 
                         <LoadingButton
                             loading={processing}
                             type="submit"
@@ -85,7 +120,7 @@ const Edit = () => {
                             Update Contact
                         </LoadingButton>
                     </div>
-                </form>
+                </form> */}
             </div>
         </div>
     );

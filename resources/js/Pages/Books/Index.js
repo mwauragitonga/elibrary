@@ -53,8 +53,11 @@ const Index = () => {
                                                     )}
                                                     className="text-indigo-600 hover:text-indigo-700"
                                                 >
-                                                    View
-                                                    <span class="fe fe-edit fe-24"></span>
+                                                    {" "}
+                                                    <span class="badge badge-pill badge-primary">
+                                                        View{" "}
+                                                        <span class="fe fe-edit fe-12"></span>
+                                                    </span>
                                                 </InertiaLink>
                                             </div>
                                         </div>
@@ -100,7 +103,19 @@ const Index = () => {
                                                 </div> */}
                                             </div>
                                             <div class="col-auto">
-                                                <span class="fe fe-edit fe-24"></span>
+                                                <InertiaLink
+                                                    href={route(
+                                                        "author.edit",
+                                                        author.id
+                                                    )}
+                                                    className="text-indigo-600 hover:text-indigo-700"
+                                                >
+                                                    {" "}
+                                                    <span class="badge badge-pill badge-success">
+                                                        View{" "}
+                                                        <span class="fe fe-edit fe-12"></span>
+                                                    </span>
+                                                </InertiaLink>{" "}
                                             </div>
                                         </div>
                                     </div>

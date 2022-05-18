@@ -62,17 +62,19 @@
                 <ul class="navbar-nav flex-fill w-100 mb-2">
 
                     <li class="nav-item w-100">
-                        <a class="nav-link" href="widgets.html">
-                            <i class="fe fe-layers fe-16"></i>
+                        <a class="nav-link" href="/books">
+                            <i class="fe fe-book fe-16"></i>
                             <span class="ml-3 item-text">Books</span>
-                            <span class="badge badge-pill badge-primary">New</span>
+                            <span class="badge badge-pill badge-success">New Additons</span>
                         </a>
                     </li>
                     <li class="nav-item w-100">
-                            <a class="nav-link" href="widgets.html">
-                                <i class="fe fe-layers fe-16"></i>
+
+                    
+                            <a class="nav-link" href="/authors">
+                                <i class="fe fe-users fe-16"></i>
                                 <span class="ml-3 item-text">Authors</span>
-                                <span class="badge badge-pill badge-primary">New</span>
+                                <span class="badge badge-pill badge-warning">New Additons</span>
                             </a>
                         </li>
 

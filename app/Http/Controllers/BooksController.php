@@ -15,7 +15,7 @@ class BooksController extends Controller
     public function index(){
         //get all books
         $books = Books::with('author')->get();
-        $authors = Authors::with('books')->get();
+        $authors = Authors::with('book')->get();
             
         return Inertia::render('Books/Index', [
             'books' =>

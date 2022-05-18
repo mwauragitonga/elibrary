@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\AuthorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\BooksController::class, 'index'])->name('home');
 
 //get all books
 Route::get('/books', [\App\Http\Controllers\BooksController::class, 'index']);
@@ -44,6 +43,6 @@ Route::put('/edit/book/{book}/', [BooksController::class, 'update'])->name('book
 // Route::put('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'update']); 
 
 
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Author::routes();
+Route::get('/edit/author/{author}/', [AuthorsController::class, 'edit'])->name('author.edit');
+Route::put('/edit/author/{author}/', [AuthorsController::class, 'update'])->name('author.update');

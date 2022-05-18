@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Authors extends Model
 {
+
+    protected $guarded = ['id']; 
+
     use HasFactory;
 
-    public function books()
+    
+    public function book()
     {
         return $this->belongsToMany(Books::class);
     }

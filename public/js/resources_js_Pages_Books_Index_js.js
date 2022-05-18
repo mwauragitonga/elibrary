@@ -92,8 +92,11 @@ var Index = function Index() {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
                         href: route("book.edit", book.id),
                         className: "text-indigo-600 hover:text-indigo-700",
-                        children: ["View", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                          "class": "fe fe-edit fe-24"
+                        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+                          "class": "badge badge-pill badge-primary",
+                          children: ["View", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                            "class": "fe fe-edit fe-12"
+                          })]
                         })]
                       })
                     })]
@@ -140,11 +143,18 @@ var Index = function Index() {
                           children: [author.fname, " ", author.lname]
                         })
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                       "class": "col-auto",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                        "class": "fe fe-edit fe-24"
-                      })
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                        href: route("author.edit", author.id),
+                        className: "text-indigo-600 hover:text-indigo-700",
+                        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+                          "class": "badge badge-pill badge-success",
+                          children: ["View", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                            "class": "fe fe-edit fe-12"
+                          })]
+                        })]
+                      }), " "]
                     })]
                   })
                 });

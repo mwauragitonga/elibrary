@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Books;
 use App\Models\Authors;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -15,9 +16,7 @@ class BooksController extends Controller
         //get all books
         $books = Books::with('author')->get();
         $authors = Authors::with('books')->get();
-       
-       // dd($books);
-        
+            
         return Inertia::render('Books/Index', [
             'books' =>
             $books, 
@@ -29,13 +28,10 @@ class BooksController extends Controller
     public function book($book){
         //get a book using id
         $bookDetails =
-        Books::find($book);
-
-
-
+        Books::with('author')->find($book);
+        Log::info('$bookDetails');
         return Inertia::render('Books/Edit', [
             'book' => $bookDetails,
-
         ]);
     }
     public function create(){
@@ -46,7 +42,7 @@ class BooksController extends Controller
     }
     public function edit( $book){
         //edit book form
-        $book = Books::findOrfail($book);
+        $book = Books::with('author')->findOrfail($book);
         return Inertia::render('Books/Edit', [
             'book' => $book,
         ]);

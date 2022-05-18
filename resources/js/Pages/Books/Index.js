@@ -31,7 +31,7 @@ const Index = () => {
                                         class="list-group-item"
                                         key={"a_" + book.id}
                                     >
-                                        { book }
+                                        {/* {book.author ? book.author[0].fname : ''} */}
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <span class="fe fe-book fe-24"></span>

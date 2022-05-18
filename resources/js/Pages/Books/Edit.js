@@ -11,9 +11,10 @@ const Edit = () => {
     const { data, setData, errors, put, processing } = useForm({
         name: book.name || "",
         isbn: book.isbn || "",
+        author: book.author || "",
         created_at: book.created_at || "",
     });
-
+    console.log(book);
     function handleSubmit(e) {
         e.preventDefault();
         put(route("book.update", book.id));
@@ -79,12 +80,34 @@ const Edit = () => {
                                 />
                             </div>
                         </div>
+                        <div class="form-group col-md-4">
+                            {/* <TextInput
+                                className="form-group"
+                                label="Author"
+                                name="author"
+                                errors={errors.author}
+                                value={data.author[0].fname}
+                                onChange={(e) =>
+                                    setData("author", e.target.value)
+                                }
+                            /> */}
+                            {data.author.map((author) => (
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="gridCheck1">
+                                            {author.fname}
+                                        </label>
+                                    </div>
+                                </div>
+                            ))
+                                }
+                        </div>
                         <LoadingButton
                             loading={processing}
                             type="submit"
                             className="ml-auto btn-indigo"
                         >
-                                Update Book
+                            Update Book
                         </LoadingButton>
                     </form>
                 </div>

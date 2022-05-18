@@ -200,6 +200,7 @@ var Edit = function Edit() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
     name: book.name || "",
     isbn: book.isbn || "",
+    author: book.author || "",
     created_at: book.created_at || ""
   }),
       data = _useForm.data,
@@ -207,6 +208,8 @@ var Edit = function Edit() {
       errors = _useForm.errors,
       put = _useForm.put,
       processing = _useForm.processing;
+
+  console.log(book);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -276,6 +279,21 @@ var Edit = function Edit() {
                 }
               })
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            "class": "form-group col-md-4",
+            children: data.author.map(function (author) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                "class": "form-group",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  "class": "form-check",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                    "class": "form-check-label",
+                    "for": "gridCheck1",
+                    children: author.fname
+                  })
+                })
+              });
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_LoadingButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
             loading: processing,
             type: "submit",

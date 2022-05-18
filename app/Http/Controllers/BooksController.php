@@ -48,7 +48,6 @@ class BooksController extends Controller
 
     public function save(Request $request){
         // insert new book
-
         $newBook = Books::create([
             'name' => $request->title,
             'isbn' => $request->isbn,
@@ -62,15 +61,12 @@ class BooksController extends Controller
     public function update(Request $request, Books $book)
     {
         //save the edited book details
-       // var_dump($request);
         $book->update([
             'name' => $request->name,
             'isbn' => $request->isbn,
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
-
-        // return redirect('book/' . $book->id);
         return Redirect::back()->with('success', 'Book updated.');
 
     }

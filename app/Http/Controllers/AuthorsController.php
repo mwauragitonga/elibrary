@@ -55,4 +55,23 @@ class AuthorsController extends Controller
         ]);
         return Redirect::back()->with('success', 'Author Details updated.');
     }
+    public function create()
+    {
+        //create new auhtor form
+        return Inertia::render('Authors/Create');
+    }
+    public function save(Request $request)
+    {
+        // insert new auhtor
+        $newAuthor = Authors::create([
+            'fname' => $request->fname,
+            'lname' => $request->lname,
+            'bio' => $request->bio,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+        if ($newAuthor) {
+            return Redirect::back()->with('success', 'Author added.');
+        }
+    }
 }

@@ -15,20 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\BooksController::class, 'index'])->name('home');
+Route::get('/', [BooksController::class, 'index'])->name('home');
 
 //get all books
-Route::get('/books', [\App\Http\Controllers\BooksController::class, 'index']);
+Route::get('/books', [BooksController::class, 'index']);
 //get a book using id
-Route::get('/book/{id}', [\App\Http\Controllers\BooksController::class, 'book']);
+Route::get('/book/{id}', [BooksController::class, 'book']);
 //get all authors
-Route::get('/authors', [\App\Http\Controllers\AuthorsController::class, 'index']);
+Route::get('/authors', [AuthorsController::class, 'index']);
 //get an author using id
-Route::get('/author/{id}', [\App\Http\Controllers\AuthorsController::class, 'author']);
+Route::get('/author/{id}', [AuthorsController::class, 'author']);
 
 //Create Author routes
-Route::get('/create/author/', [\App\Http\Controllers\AuthorsController::class, 'create']);
-Route::post('/create/author/', [\App\Http\Controllers\AuthorsController::class, 'save']);
+Route::get('/create/author/', [AuthorsController::class, 'create']);
+Route::post('/create/author/', [AuthorsController::class, 'save'])->name('author.create');
 
 //Create Book Routes
 Route::get('/create/book/', [BooksController::class, 'create']);

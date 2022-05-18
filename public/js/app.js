@@ -63613,6 +63613,16 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Authors/Create": [
+		"./resources/js/Pages/Authors/Create.js",
+		9,
+		"resources_js_Pages_Authors_Create_js"
+	],
+	"./Authors/Create.js": [
+		"./resources/js/Pages/Authors/Create.js",
+		9,
+		"resources_js_Pages_Authors_Create_js"
+	],
 	"./Authors/Edit": [
 		"./resources/js/Pages/Authors/Edit.js",
 		9,
@@ -63852,7 +63862,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Authors_Edit_js":1,"resources_js_Pages_Authors_Index_js":1,"resources_js_Pages_Books_Create_js":1,"resources_js_Pages_Books_Edit_js":1,"resources_js_Pages_Books_Index_js":1,"resources_js_Pages_Books_View_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Authors_Create_js":1,"resources_js_Pages_Authors_Edit_js":1,"resources_js_Pages_Authors_Index_js":1,"resources_js_Pages_Books_Create_js":1,"resources_js_Pages_Books_Edit_js":1,"resources_js_Pages_Books_Index_js":1,"resources_js_Pages_Books_View_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

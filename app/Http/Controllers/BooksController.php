@@ -36,9 +36,7 @@ class BooksController extends Controller
     }
     public function create(){
         //create new book form
-
-        return view('addBook');
-
+        return Inertia::render('Books/Create');
     }
     public function edit( $book){
         //edit book form
@@ -57,8 +55,9 @@ class BooksController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
-
-        return redirect('book/' . $newBook->id);
+        if($newBook){
+            return Redirect::back()->with('success', 'Book added.');
+        }
     }
     public function update(Request $request, Books $book)
     {

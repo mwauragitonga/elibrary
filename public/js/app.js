@@ -63633,6 +63633,16 @@ var map = {
 		9,
 		"resources_js_Pages_Authors_Index_js"
 	],
+	"./Books/Create": [
+		"./resources/js/Pages/Books/Create.js",
+		9,
+		"resources_js_Pages_Books_Create_js"
+	],
+	"./Books/Create.js": [
+		"./resources/js/Pages/Books/Create.js",
+		9,
+		"resources_js_Pages_Books_Create_js"
+	],
 	"./Books/Edit": [
 		"./resources/js/Pages/Books/Edit.js",
 		9,
@@ -63842,7 +63852,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Authors_Edit_js":1,"resources_js_Pages_Authors_Index_js":1,"resources_js_Pages_Books_Edit_js":1,"resources_js_Pages_Books_Index_js":1,"resources_js_Pages_Books_View_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Authors_Edit_js":1,"resources_js_Pages_Authors_Index_js":1,"resources_js_Pages_Books_Create_js":1,"resources_js_Pages_Books_Edit_js":1,"resources_js_Pages_Books_Index_js":1,"resources_js_Pages_Books_View_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -31,17 +31,14 @@ Route::get('/create/author/', [\App\Http\Controllers\AuthorsController::class, '
 Route::post('/create/author/', [\App\Http\Controllers\AuthorsController::class, 'save']);
 
 //Create Book Routes
-Route::get('/create/book/', [\App\Http\Controllers\BooksController::class, 'create']);
-Route::post('/create/book/', [\App\Http\Controllers\BooksController::class, 'save']);
+Route::get('/create/book/', [BooksController::class, 'create']);
+Route::post('/create/book/', [BooksController::class, 'save'])->name('book.create');
 
 //Edit Book Routes
 // routes/web.php
 
 Route::get('/edit/book/{book}/', [BooksController::class, 'edit'])->name('book.edit');
 Route::put('/edit/book/{book}/', [BooksController::class, 'update'])->name('book.update');
-// Route::get('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'edit'])->name('books.edit'); 
-// Route::put('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'update']); 
-
 
 // Author::routes();
 Route::get('/edit/author/{author}/', [AuthorsController::class, 'edit'])->name('author.edit');

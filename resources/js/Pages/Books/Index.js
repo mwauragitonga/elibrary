@@ -23,6 +23,14 @@ const Index = () => {
                     <div class="card shadow">
                         <div class="card-header">
                             <strong class="card-title">Books</strong>
+                            <a href="/create/book">
+                                <button
+                                    class="btn btn-sm btn-primary float-right ml-3"
+                                    type="button"
+                                >
+                                    Add book +
+                                </button>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="list-group list-group-flush my-n3">
@@ -31,7 +39,6 @@ const Index = () => {
                                         class="list-group-item"
                                         key={"a_" + book.id}
                                     >
-                                        {/* {book.author ? book.author[0].fname : ''} */}
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <span class="fe fe-book fe-24"></span>
@@ -82,6 +89,14 @@ const Index = () => {
                     <div class="card timeline">
                         <div class="card-header">
                             <strong class="card-title">Authors</strong>
+                            <a href="/create/author">
+                                <button
+                                    class="btn btn-sm btn-success float-right ml-3"
+                                    type="button"
+                                >
+                                    Add Author +
+                                </button>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="list-group list-group-flush my-n3">

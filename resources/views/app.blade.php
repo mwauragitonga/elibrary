@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html class="h-full bg-gray-200">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -18,7 +18,7 @@
     <div class="wrapper">
 
         <nav class="topnav navbar navbar-light">
-          
+
             <div class="form-inline mr-auto  text-muted">
             </div>
             <ul class="nav">
@@ -27,14 +27,14 @@
                         <i class="fe fe-sun fe-16"></i>
                     </a>
                 </li>
-             
+
                 <li class="nav-item nav-notif">
                     <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
                         <span class="fe fe-bell fe-16"></span>
                         <span class="dot dot-md bg-success"></span>
                     </a>
                 </li>
-               
+
             </ul>
         </nav>
 
@@ -69,21 +69,22 @@
                     </li>
                     <li class="nav-item w-100">
 
-                    
-                            <a class="nav-link" href="/authors">
-                                <i class="fe fe-users fe-16"></i>
-                                <span class="ml-3 item-text">Authors</span>
-                            </a>
-                        </li>
+
+                        <a class="nav-link" href="/authors">
+                            <i class="fe fe-users fe-16"></i>
+                            <span class="ml-3 item-text">Authors</span>
+                        </a>
+                    </li>
 
                 </ul>
-  
+
             </nav>
         </aside>
 
         <main role="main" class="main-content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
+                  
                     @inertia
                 </div>
             </div>

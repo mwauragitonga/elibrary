@@ -34,6 +34,8 @@ const Edit = () => {
 
     return (
         <div className="mt-20">
+            <h2 class="h3 mb-4 page-title">Book Info</h2>
+
             <div class="card shadow mb-4">
                 <div class="card-header">
                     <strong class="card-title">Viewing Book Details</strong>
@@ -94,13 +96,15 @@ const Edit = () => {
                             {data.author.map((author) => (
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <label class="form-check-label" for="gridCheck1">
+                                        <label
+                                            class="form-check-label"
+                                            for="gridCheck1"
+                                        >
                                             {author.fname}
                                         </label>
                                     </div>
                                 </div>
-                            ))
-                                }
+                            ))}
                         </div>
                         <LoadingButton
                             loading={processing}

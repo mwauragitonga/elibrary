@@ -35,8 +35,14 @@ class BooksController extends Controller
         ]);
     }
     public function create(){
+
+        $authors = Authors::with('book')->get();
+
         //create new book form
-        return Inertia::render('Books/Create');
+        return Inertia::render('Books/Create', [
+            'authors' => $authors,
+            
+        ]);
     }
     public function edit( $book){
         //edit book form
@@ -55,7 +61,7 @@ class BooksController extends Controller
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
         if($newBook){
-            return Redirect::back()->with('success', 'Book added.');
+            return Redirect::back()->with('message', 'Book added.');
         }
     }
     public function update(Request $request, Books $book)

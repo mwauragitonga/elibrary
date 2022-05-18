@@ -36,14 +36,99 @@ const Edit = () => {
 
     return (
         <div className="mt-20">
+            <h2 class="h3 mb-4 page-title">Author Info</h2>
             <div class="card shadow mb-4">
                 <div class="card-header">
                     <strong class="card-title">Viewing Author Details</strong>
                 </div>
                 <div class="card-body">
-                    <form onSubmit={handleSubmit}>
+                         <form onSubmit={handleSubmit}>
+                    <div class="row mt-5 align-items-center">
+                        <div class="col-md-3 text-center mb-5">
+                            <div class="avatar avatar-xl">
+                                <img
+                                    src={"../../../images/" + author.image}
+                                    alt="..."
+                                    class="avatar-img rounded-circle"
+                                />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row align-items-center">
+                                <div class="col-md-7">
+                                    <h4 class="mb-1">
+                                        {data.fname}, {data.lname}
+                                    </h4>
+                                    <p class="small mb-3">
+                                        <span class="badge badge-dark">
+                                            {data.book.map(
+                                                (book) => book.name + " "
+                                            )}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="form-group col-md-4">
+                                    <TextInput
+                                        className="form-group"
+                                        label="First Name"
+                                        name="fname"
+                                        errors={errors.fname}
+                                        value={data.fname}
+                                        onChange={(e) =>
+                                            setData("fname", e.target.value)
+                                        }
+                                    />{" "}
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <TextInput
+                                        className="form-group"
+                                        label="Last Name"
+                                        name="lname"
+                                        errors={errors.lname}
+                                        value={data.lname}
+                                        onChange={(e) =>
+                                            setData("lname", e.target.value)
+                                        }
+                                    />{" "}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="bio">
+                                    Bio
+                                </label>
+
+                                <div class="form-group col-md-8">
+                                    <textarea
+                                        className="form-group"
+                                        label="Bio"
+                                        name="bio"
+                                        rows={10}
+                                        cols={70}
+                                        errors={errors.bio}
+                                        value={data.bio}
+                                        onChange={(e) =>
+                                            setData("bio", e.target.value)
+                                        }
+                                    />
+                                </div>
+                            </div>
+                            <LoadingButton
+                                loading={processing}
+                                type="submit"
+                                className="ml-auto btn-indigo"
+                            >
+                                Update Author Details
+                                </LoadingButton>
+                                
+                            </div>
+                            
+                        </div>
+                        </form>
+                    {/* <form onSubmit={handleSubmit}> */}
                         {" "}
-                        <div class="form-row">
+                        {/* <div class="form-row">
                             <div class="form-group col-md-4">
                                 <TextInput
                                     className="form-group"
@@ -90,16 +175,7 @@ const Edit = () => {
                             </div>
                         </div>
                         <div class="form-group col-md-4">
-                            {/* <TextInput
-                                className="form-group"
-                                label="Author"
-                                name="author"
-                                errors={errors.author}
-                                value={data.author[0].fname}
-                                onChange={(e) =>
-                                    setData("author", e.target.value)
-                                }
-                            /> */}
+
                             {data.book.map((book) => (
                                 <div class="form-group">
                                     <div class="form-check">
@@ -112,15 +188,8 @@ const Edit = () => {
                                     </div>
                                 </div>
                             ))}
-                        </div>
-                        <LoadingButton
-                            loading={processing}
-                            type="submit"
-                            className="ml-auto btn-indigo"
-                        >
-                            Update Author Details
-                        </LoadingButton>
-                    </form>
+                        </div> */}
+                    {/* </form> */}
                 </div>
             </div>
 

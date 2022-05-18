@@ -229,7 +229,10 @@ var Edit = function Edit() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "mt-20",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+      "class": "h3 mb-4 page-title",
+      children: "Author Info"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       "class": "card shadow mb-4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         "class": "card-header",
@@ -237,81 +240,97 @@ var Edit = function Edit() {
           "class": "card-title",
           children: "Viewing Author Details"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         "class": "card-body",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("form", {
           onSubmit: handleSubmit,
-          children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            "class": "form-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              "class": "form-group col-md-4",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                className: "form-group",
-                label: "First Name",
-                name: "fname",
-                errors: errors.fname,
-                value: data.fname,
-                onChange: function onChange(e) {
-                  return setData("fname", e.target.value);
-                }
-              }), " "]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              "class": "form-group col-md-4",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                className: "form-group",
-                label: "Last Name",
-                name: "lname",
-                errors: errors.lname,
-                value: data.lname,
-                onChange: function onChange(e) {
-                  return setData("isbn", e.target.value);
-                }
-              }), " "]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            "class": "form-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-              "for": "bio",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
-                children: "Bio"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-              "class": "form-group col-md-8",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("textarea", {
-                className: "form-group",
-                label: "Bio",
-                name: "bio",
-                rows: 5,
-                cols: 90,
-                errors: errors.bio,
-                value: data.bio,
-                onChange: function onChange(e) {
-                  return setData("bio", e.target.value);
-                }
-              })
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-            "class": "form-group col-md-4",
-            children: data.book.map(function (book) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                "class": "form-group",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-                  "class": "form-check",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-                    "class": "form-check-label",
-                    "for": "gridCheck1",
-                    children: book.name
-                  })
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            "class": "row mt-5 align-items-center",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              "class": "col-md-3 text-center mb-5",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                "class": "avatar avatar-xl",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: "../../../images/" + author.image,
+                  alt: "...",
+                  "class": "avatar-img rounded-circle"
                 })
-              });
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_LoadingButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            loading: processing,
-            type: "submit",
-            className: "ml-auto btn-indigo",
-            children: "Update Author Details"
-          })]
-        })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              "class": "col",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                "class": "row align-items-center",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  "class": "col-md-7",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h4", {
+                    "class": "mb-1",
+                    children: [data.fname, ", ", data.lname]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+                    "class": "small mb-3",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                      "class": "badge badge-dark",
+                      children: data.book.map(function (book) {
+                        return book.name + " ";
+                      })
+                    })
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                "class": "row mb-4",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  "class": "form-group col-md-4",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                    className: "form-group",
+                    label: "First Name",
+                    name: "fname",
+                    errors: errors.fname,
+                    value: data.fname,
+                    onChange: function onChange(e) {
+                      return setData("fname", e.target.value);
+                    }
+                  }), " "]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  "class": "form-group col-md-4",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                    className: "form-group",
+                    label: "Last Name",
+                    name: "lname",
+                    errors: errors.lname,
+                    value: data.lname,
+                    onChange: function onChange(e) {
+                      return setData("lname", e.target.value);
+                    }
+                  }), " "]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                "class": "row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+                  "for": "bio",
+                  children: "Bio"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  "class": "form-group col-md-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("textarea", {
+                    className: "form-group",
+                    label: "Bio",
+                    name: "bio",
+                    rows: 10,
+                    cols: 70,
+                    errors: errors.bio,
+                    value: data.bio,
+                    onChange: function onChange(e) {
+                      return setData("bio", e.target.value);
+                    }
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Layout_LoadingButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                loading: processing,
+                type: "submit",
+                className: "ml-auto btn-indigo",
+                children: "Update Author Details"
+              })]
+            })]
+          })
+        }), " "]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "max-w-3xl overflow-hidden bg-white rounded shadow"

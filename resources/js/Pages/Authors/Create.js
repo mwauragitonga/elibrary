@@ -2,7 +2,7 @@ import { Inertia } from "@inertiajs/inertia";
 import React, { useState } from "react";
 import LoadingButton from "../../Layout/LoadingButton";
 
-export default function Edit() {
+export default function Create() {
     const [values, setValues, processing] = useState({
         fname: "",
         lname: "",

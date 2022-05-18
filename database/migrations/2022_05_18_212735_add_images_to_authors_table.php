@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBooksTable extends Migration
+class AddImagesToAuthorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('books', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('isbn');
-
-            $table->timestamps();
+        Schema::table('authors', function (Blueprint $table) {
+            //
+            $table->string('image')->after("bio")->nullable();
+            $table->text('description')->after("image")->nullable();
         });
     }
 
@@ -29,6 +27,8 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books');
+        Schema::table('authors', function (Blueprint $table) {
+            //
+        });
     }
 }

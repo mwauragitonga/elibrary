@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [BooksController::class, 'index'])->name('home');
+Route::get('/', [BooksController::class, 'index']);
 
 //get all books
 Route::get('/books', [BooksController::class, 'index']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Books;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class BooksController extends Controller
 {
@@ -11,12 +12,13 @@ class BooksController extends Controller
     public function index(){
         //get all books
         $books = Books::all();
-        return view('books', [
-            'books' => $books,
+       
+        return Inertia::render('Books/Index', [
+            'books' =>
+            $books,
         ]);
 
     }
-    
     public function book($book){
         //get a book using id
         $bookDetails =
@@ -37,10 +39,11 @@ class BooksController extends Controller
     public function edit( $book){
             //edit book form
 
-            $book = Books::find($book);
-            return view('editBook', [
-                'book' => $book,
-            ]);
+            $book = Books::findOrfail($book);
+        return Inertia::render('Books/Edit', [
+            'book' => $book,
+           
+        ]);
         }
 
     public function save(Request $request){

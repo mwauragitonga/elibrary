@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BooksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,13 @@ Route::get('/create/book/', [\App\Http\Controllers\BooksController::class, 'crea
 Route::post('/create/book/', [\App\Http\Controllers\BooksController::class, 'save']);
 
 //Edit Book Routes
-Route::get('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'edit']); 
+// routes/web.php
+
+Route::get('/edit/book/{book}/', [BooksController::class, 'edit'])->name('books.edit');
+// Route::get('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'edit'])->name('books.edit'); 
 Route::put('/edit/book/{book}/', [\App\Http\Controllers\BooksController::class, 'update']); 
 
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

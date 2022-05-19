@@ -1,64 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://belvadigital.com/wp-content/uploads/2020/04/belva-logo-edited.png" alt="Project logo"></a>
 </p>
 
-## About Laravel
+<h3 align="center">Belva Digital Senior Software Engineer Code Challenge</h3>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center"> A Web Application to manage a list of books & authors.
+    <br> 
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📝 Table of Contents
 
-## Learning Laravel
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [TODO](../TODO.md)
+- [Contributing](../CONTRIBUTING.md)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🧐 About <a name = "about"></a>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This is a web application to manage a list of books & authors submitted as fulfillment for Senior Software Engineer interview process.
+## 🧐 Technical Description <a name = "Technical Description"></a>
+The application is built using the following technologies:
+```
+- Laravel 
+- React
+- HTML
+- CSS
+    
+```
 
-## Laravel Sponsors
+## 🧐 Future Improvements <a name = "Improvements"></a>
+Some of the future improvements that I would like to make are:
+- Adding toast notifications
+- The UI could be improved in several ways
+    - adding a search bar
+## 🏁 Getting Started <a name = "getting_started"></a>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Prerequisites
 
-### Premium Partners
+Ensure your deployment environment is set up correctly with the following.
+```
+- Node.js
+- NPM/Yarn
+- React (InertiaJs)
+- Laravel v8
+- General HTML/CSS Knowledge
+- Git
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    
+```
 
-## Contributing
+### Installing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+A step by step series of examples that tell you how to get a development env running.
 
-## Code of Conduct
+Say what the step will be
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+1. Install all prerequisites defined above
+2. Clone the repository from GitHub
+3. Open terminal and navigate to the project directory
+4. Run "composer install" to install all the composer related packages
+5. Run "npm install" to install all the node related packages
+6. Run "php artisan migrate" to run the database migrations
+7. Run "npm run dev" to run the development server
+7. Open the browser and navigate to http://localhost:8000
+8. Enjoy!
+```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+## 🎈 Usage <a name="usage"></a>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Application is to be used to view & manage an eLibrary.
+
+## 🚀 Deployment <a name = "deployment"></a>
+The application is deployed on  Heroku and available on [GitHub]
+
+- To create a production ready version of the application, run "npm build"
+- To deploy the application to a live system, run "npm deploy"
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [Laravel](https://laravel.com/) - A PHP Framework for Web Artisans.
+- [InertiaJs](https://inertiajs.com/) - A ReactJs library for building user interfaces.
+- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Git](https://git-scm.com/) - Version Control System
+- [Composer](https://getcomposer.org/) - A package manager for PHP.
+- [MySQL](https://www.mysql.com/) - Database Server
+- [Heroku](https://www.heroku.com/) - Platform for deploying and managing applications.
+- [Bootstrap](https://getbootstrap.com/) - Front-end framework for developing responsive, mobile-first projects on the web.
+
+## ✍️ Authors <a name = "authors"></a>
+This was written by Kelvin Mwaura
+Find below my various digital profiles
+- [Github](https://github.com/mwauragitonga)
+- [Website ](https://www.mwauragitonga.com)
+- [LinkedIn ](https://www.linkedin.com/in/mwaura-kelvin-gitonga-3a3b07171/)
+
+
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+
+- Hat tip to the [Laravel Community](https://laravel.com/about) for the great work they have done.
+- Hat tip to the [ReactJs Community](https://reactjs.org/) for the great work they have done.
+- Hat tip to the [InertiaJs Community](https://inertiajs.com/) for the great work they have done.
+
+
+

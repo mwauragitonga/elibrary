@@ -16,7 +16,7 @@ class AddImagesToAuthorsTable extends Migration
         Schema::table('authors', function (Blueprint $table) {
             //
             $table->string('image')->after("bio")->nullable();
-            $table->text('description')->after("image")->nullable();
+            // $table->text('description')->after("image")->nullable();
         });
     }
 
@@ -29,6 +29,9 @@ class AddImagesToAuthorsTable extends Migration
     {
         Schema::table('authors', function (Blueprint $table) {
             //
+            $table->dropColumn('image');
         });
     }
+
+    
 }

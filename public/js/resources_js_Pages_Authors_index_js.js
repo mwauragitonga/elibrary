@@ -85,7 +85,8 @@ var Index = function Index() {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                         "class": "avatar avatar-md",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-                          src: "../../../images/" + author.image,
+                          // src={"../../../images/" + author.image}
+                          src: author.path,
                           alt: "...",
                           "class": "avatar-img rounded-circle"
                         })

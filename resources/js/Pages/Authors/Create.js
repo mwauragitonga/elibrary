@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import LoadingButton from "../../Layout/LoadingButton";
 
 export default function Create() {
-    const [values, setValues, processing] = useState({
+    const [values, setValues, processing, progress] = useState({
         fname: "",
         lname: "",
         bio: "",
+        avatar: "",
     });
+    const [status , setStatus] = useState({success: false});
 
     function handleChange(e) {
         const key = e.target.id;
@@ -20,7 +22,18 @@ export default function Create() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        Inertia.post("/create/author", values);
+        Inertia.post("/create/author", values, {
+            onSuccess: (message) => {
+                setStatus({ success: true });
+                console.log(fname);
+            },
+            onFinish: (res) => {
+                console.log($page.props.flash.message);
+                // console.log($page.message);
+                 setStatus({ success: true });
+                 console.log(status);
+            }
+        });
     }
 
     return (
@@ -61,6 +74,24 @@ export default function Create() {
                                 value={values.bio}
                                 onChange={handleChange}
                             />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label htmlFor="avatar"> Avatar:</label>
+                            <input
+                                className="form-control"
+                                type="file"
+                                onChange={(e) =>
+                                    setValues((values) => ({
+                                        ...values,
+                                        avatar: e.target.files[0],
+                                    }))
+                                }
+                            />
+                            {progress && (
+                                <progress value={progress.percentage} max="100">
+                                    {progress.percentage}%
+                                </progress>
+                            )}
                         </div>
                         <LoadingButton
                             loading={processing}

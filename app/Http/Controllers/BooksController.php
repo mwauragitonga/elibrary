@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Books;
 use App\Models\Authors;
+use App\Models\AuthorsBooks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
@@ -54,13 +55,18 @@ class BooksController extends Controller
 
     public function save(Request $request){
         // insert new book
+        $author =$request->author;
+       
         $newBook = Books::create([
             'name' => $request->title,
             'isbn' => $request->isbn,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
         ]);
         if($newBook){
+            $rel = AuthorsBooks::create([
+                'authors_id' => (int)$author,
+                'books_id' => $newBook->id,
+
+            ]);
             return Redirect::back()->with('message', 'Book added.');
         }
     }
@@ -73,7 +79,7 @@ class BooksController extends Controller
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
-        return Redirect::back()->with('success', 'Book updated.');
+        return Redirect::back()->with('message', 'Book updated.');
 
     }
 }

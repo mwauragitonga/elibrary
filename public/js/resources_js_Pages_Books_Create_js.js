@@ -109,12 +109,26 @@ function Create() {
     title: "",
     isbn: "",
     author: "",
-    flash: ""
+    flash: "",
+    author_id: ""
   }),
       _useState4 = _slicedToArray(_useState3, 3),
       values = _useState4[0],
       setValues = _useState4[1],
       processing = _useState4[2];
+
+  function changeHandler(e) {
+    setValues({
+      author: e.value
+    });
+    setValues({
+      author_id: author.value
+    }); //    author = ;
+
+    console.log(author_id);
+  }
+
+  ;
 
   function handleChange(e) {
     var key = e.target.id;
@@ -176,26 +190,11 @@ function Create() {
               className: "form-control",
               name: "author",
               id: "author",
-              onChange: function (_onChange) {
-                function onChange(_x) {
-                  return _onChange.apply(this, arguments);
-                }
-
-                onChange.toString = function () {
-                  return _onChange.toString();
-                };
-
-                return onChange;
-              }(function (e) {
-                return onChange = {
-                  handleChange: handleChange
-                }(e);
-              }),
+              onChange: handleChange,
               value: values.author,
               required: true,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
                 value: "",
-                "aria-readonly": true,
                 children: "Select Author"
               }), authors.map(function (author, key) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {

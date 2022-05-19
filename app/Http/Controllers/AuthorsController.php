@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Authors;
 use App\Models\Books;
+use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
+
+// use Illuminate\Support\Facades\File;
 
 class AuthorsController extends Controller
 {
@@ -18,6 +22,7 @@ class AuthorsController extends Controller
         $books = Books::with('author')->get();
         $authors = Authors::with('book')->get();
 
+       // dd($authors);
         return Inertia::render('Authors/Index', [
             'books' =>
             $books,
@@ -53,7 +58,7 @@ class AuthorsController extends Controller
             'bio' => $request->bio,
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
-        return Redirect::back()->with('success', 'Author Details updated.');
+        return Redirect::back()->with('message', 'Author Details updated.');
     }
     public function create()
     {
@@ -62,16 +67,32 @@ class AuthorsController extends Controller
     }
     public function save(Request $request)
     {
+        $avatar = $request->file('avatar');
+        
+        $rand =
+        rand(0, 9999);
+         // dd($rand);
+        $image_name = $rand ."_" . $avatar->getClientOriginalName();
+        $extension = $avatar->getClientOriginalExtension();
+
+     
+        $path = Storage::putFileAs('public/images', $avatar, $image_name);
+
         // insert new auhtor
-        $newAuthor = Authors::create([
-            'fname' => $request->fname,
-            'lname' => $request->lname,
-            'bio' => $request->bio,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        if ($newAuthor) {
-            return Redirect::back()->with('success', 'Author added.');
+        if  ($path){
+            $newAuthor = Authors::create([
+                'fname' => $request->fname,
+                'lname' => $request->lname,
+                'bio' => $request->bio,
+                'image' => $image_name,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            if ($newAuthor) {
+                // return response()->json(['message', 'Author added.'], 201);
+                return Redirect::back()->with(['message' => 'Author added.']);
+            }
         }
+        
     }
 }

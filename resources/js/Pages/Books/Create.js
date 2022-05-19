@@ -15,9 +15,18 @@ export default function Create() {
         isbn: "",
         author: "",
         flash: "",
+        author_id: "",
     });
 
+  function  changeHandler (e){
+      setValues({ author: e.value });
+      setValues({ author_id: author.value});
+    //    author = ;
+            console.log(author_id);
+
+    };
     function handleChange(e) {
+       
         const key = e.target.id;
         const value = e.target.value;
         setValues((values) => ({
@@ -85,15 +94,11 @@ export default function Create() {
                                 className="form-control"
                                 name="author"
                                 id="author"
-                                onChange={(e) =>
-                                    (onChange = { handleChange }(e))
-                                }
+                                onChange={handleChange}
                                 value={values.author}
                                 required
                             >
-                                <option value="" aria-readonly>
-                                    Select Author
-                                </option>
+                                <option value="">Select Author</option>
                                 {authors.map((author, key) => (
                                     <option key={key} value={author.id}>
                                         {author.fname}

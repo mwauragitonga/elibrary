@@ -94,12 +94,21 @@ function Create() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     fname: "",
     lname: "",
-    bio: ""
+    bio: "",
+    avatar: ""
   }),
-      _useState2 = _slicedToArray(_useState, 3),
+      _useState2 = _slicedToArray(_useState, 4),
       values = _useState2[0],
       setValues = _useState2[1],
-      processing = _useState2[2];
+      processing = _useState2[2],
+      progress = _useState2[3];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    success: false
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      status = _useState4[0],
+      setStatus = _useState4[1];
 
   function handleChange(e) {
     var key = e.target.id;
@@ -111,7 +120,22 @@ function Create() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post("/create/author", values);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post("/create/author", values, {
+      onSuccess: function onSuccess(message) {
+        setStatus({
+          success: true
+        });
+        console.log(fname);
+      },
+      onFinish: function onFinish(res) {
+        console.log($page.props.flash.message); // console.log($page.message);
+
+        setStatus({
+          success: true
+        });
+        console.log(status);
+      }
+    });
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -164,6 +188,26 @@ function Create() {
               cols: 70,
               value: values.bio,
               onChange: handleChange
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            "class": "form-group col-md-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+              htmlFor: "avatar",
+              children: " Avatar:"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+              className: "form-control",
+              type: "file",
+              onChange: function onChange(e) {
+                return setValues(function (values) {
+                  return _objectSpread(_objectSpread({}, values), {}, {
+                    avatar: e.target.files[0]
+                  });
+                });
+              }
+            }), progress && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("progress", {
+              value: progress.percentage,
+              max: "100",
+              children: [progress.percentage, "%"]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layout_LoadingButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
             loading: processing,

@@ -27,9 +27,8 @@
                         <i class="fe fe-sun fe-16"></i>
                     </a>
                 </li>
-
                 <li class="nav-item nav-notif">
-                    <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+                    <a class="nav-link text-muted my-2" href="./" data-toggle="modal" data-target=".modal-notif">
                         <span class="fe fe-bell fe-16"></span>
                         <span class="dot dot-md bg-success"></span>
                     </a>
@@ -57,7 +56,7 @@
                 </div>
 
                 <p class="text-muted nav-heading mt-4 mb-1">
-                    <span>Components</span>
+                    <span>Menu</span>
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
 

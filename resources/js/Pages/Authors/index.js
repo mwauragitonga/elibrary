@@ -34,7 +34,8 @@ const Index = () => {
                                             <div class="col-auto">
                                                 <div class="avatar avatar-md">
                                                     <img
-                                                        src={"../../../images/" + author.image}
+                                                        // src={"../../../images/" + author.image}
+                                                        src={ author.path}
                                                         alt="..."
                                                         class="avatar-img rounded-circle"
                                                     />
